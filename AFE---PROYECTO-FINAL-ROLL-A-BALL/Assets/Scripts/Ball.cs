@@ -3,9 +3,15 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     Vector2 previousPosition;
+    private new  Rigidbody rigidbody;
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
+    }
+
+    public void Shoot()
+    {
+        rigidbody.AddForce(new Vector3(0, 130, 0), ForceMode.VelocityChange);
     }
 
     // Update is called once per frame
